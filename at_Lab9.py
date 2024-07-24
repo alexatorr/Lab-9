@@ -10,6 +10,15 @@ def encode(password):
         passencode=passencode+str(a)
         i=i+1
     strencode=''.join(str(passencode))
-    print(strencode)
-encode('12345555')
-encode('00009962')
+    return strencode
+#Thomas's Code
+def decode(password):
+    intpass = list(password)
+    threestring = ""
+    listofnumbers = list(password)
+    for nums in range(len(listofnumbers)):
+        addnum = int(listofnumbers[nums]) - 3
+        if addnum < 0:
+            addnum += 10
+        threestring += str(addnum)
+    return threestring
