@@ -10,7 +10,6 @@ def encode(password):
         passencode=passencode+str(a)
         i=i+1
     strencode=''.join(str(passencode))
-    print(strencode)
     return strencode
 #Thomas's Code
 def decode(password):
@@ -23,3 +22,21 @@ def decode(password):
             addnum += 10
         threestring += str(addnum)
     return threestring
+if __name__=='__main__':
+    option=0
+    while option!=3:
+        print('Menu')
+        print('-------------')
+        print('1. Encode')
+        print('2. Decode')
+        print('3. Quit')
+        print('')
+        option=int(input('Please enter an option: '))
+        if option==1:
+            password=str(input('Please enter your password to encode: '))
+            a=encode(password)
+            print('Your password has been encoded and stored!')
+            print('')
+        elif option==2:
+            print(f'The encoded password is {a}, and the original password is {decode(a)}.')
+    exit()
